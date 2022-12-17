@@ -1,3 +1,6 @@
 """To jest docstring modułu"""
+#
+# print(globals())
 
-print(globals())
+def hello_word():
+    return "Hello World"
