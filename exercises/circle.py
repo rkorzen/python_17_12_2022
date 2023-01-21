@@ -22,7 +22,7 @@ ValueError
 
 """
 
-from math import pi
+from math import pi, sqrt
 
 class Circle:
     def __init__(self, r=1):
@@ -33,8 +33,38 @@ class Circle:
 
     @area.setter
     def area(self, value):
+        self.r = sqrt(value/pi)
 
     @property
     def perimeter(self):
         return 2 * pi * self.r
+
+    @perimeter.setter
+    def perimeter(self, value):
+        self.r = value / (2 * pi)
+
+    @property
+    def r(self):  # print(c.r)
+        return self.__r
+
+    # @r.getter
+    # def r(self):
+    #     return self._r
+    @r.setter
+    def r(self, value): # c.r = 10
+        if value < 0: raise ValueError("Promien nie moze byc mniejszy niz 0")
+        self.__r = value
+
+if __name__ == "__main__":
+    c = Circle()
+    assert c.r == 1
+    assert c.area == pi
+    assert c.perimeter == 2 * pi
+
+    # c.r = -10
+
+    c.area = 12
+
+    assert c.r == sqrt(12/pi)
+    print(vars(c))
 
