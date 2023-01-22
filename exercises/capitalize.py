@@ -33,6 +33,7 @@ Print the capitalized string S
 
 """
 
+
 def solve(s):
 
     out = ""

@@ -1,5 +1,3 @@
-
-
 def flatten(elements: list) -> list:
     """
 
@@ -31,9 +29,12 @@ class Count:
         self.function(*args, **kwargs)
         self.cnt += 1
 
+
 @Count
 def helloworld():
     print("Hello World!")
+
+
 helloworld()
 helloworld()
 helloworld()

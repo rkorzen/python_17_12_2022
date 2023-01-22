@@ -8,7 +8,7 @@ Mamy Kevina i Stuarta oraz jakieś słowo
 Kevin buduje ciągi znaków zaczynające się na samogłosek.
 Stuart robi to samo, zaczynając od spółgłosek.
 
-Dostają punkt za każdy ciąg znaków, który się zawiera w zadanym słowie. Jeśli ciąg występuję wiele razy do dostaje tyle punktów ile wystąpień
+Dostają punkt za każdy ciąg znaków, który się zawiera w zadanym słowie. Jeśli ciąg występuję wiele razy do dostaje tyle punktów ile wystąpień  # noqa:501
 
 Wynik to nazwa wygranego gracza i jego punkty. Ewentualnie Draw - jeśli remis.
 Słowa składają się z dużych liter.
@@ -72,6 +72,7 @@ Wynik: Draw
 """
 
 VOWELS = "AEIOU"
+
 
 def minion_game(string: str) -> str:
     # stuart_score = 0

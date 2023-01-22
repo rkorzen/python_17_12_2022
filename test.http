@@ -1,0 +1,6 @@
+GET https://www.alx.pl/
+
+###
+
+GET http://api.nbp.pl/api/exchangerates/tables/A/
+

@@ -10,10 +10,12 @@ from abc import ABC, abstractmethod
 
 class Shape(ABC):
     @abstractmethod
-    def get_area(self): ...
+    def get_area(self):
+        ...
 
     @abstractmethod
-    def get_perimeter(self): ...
+    def get_perimeter(self):
+        ...
 
     # @staticmethod
     # @abstractmethod
@@ -22,13 +24,14 @@ class Shape(ABC):
 
 
 class Square(Shape):
-
     def __init__(self, side):
         self.side = side
 
-    def get_area(self): return self.side ** 2
+    def get_area(self):
+        return self.side**2
 
-    def get_perimeter(self): return self.side * 4
+    def get_perimeter(self):
+        return self.side * 4
 
 
 s = Square(1)

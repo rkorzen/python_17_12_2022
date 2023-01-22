@@ -24,16 +24,18 @@ ValueError
 
 from math import pi, sqrt
 
+
 class Circle:
     def __init__(self, r=1):
         self.r = r
+
     @property
     def area(self):
-        return self.r ** 2 * pi
+        return self.r**2 * pi
 
     @area.setter
     def area(self, value):
-        self.r = sqrt(value/pi)
+        self.r = sqrt(value / pi)
 
     @property
     def perimeter(self):
@@ -51,9 +53,11 @@ class Circle:
     # def r(self):
     #     return self._r
     @r.setter
-    def r(self, value): # c.r = 10
-        if value < 0: raise ValueError("Promien nie moze byc mniejszy niz 0")
+    def r(self, value):  # c.r = 10
+        if value < 0:
+            raise ValueError("Promien nie moze byc mniejszy niz 0")
         self.__r = value
+
 
 if __name__ == "__main__":
     c = Circle()
@@ -65,6 +69,5 @@ if __name__ == "__main__":
 
     c.area = 12
 
-    assert c.r == sqrt(12/pi)
+    assert c.r == sqrt(12 / pi)
     print(vars(c))
-
