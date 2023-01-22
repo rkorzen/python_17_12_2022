@@ -8,6 +8,10 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 
+dane = [
+    {},{}
+]
+
 @app.route("/")
 def home():
     return f"Hello Flask!"
@@ -78,5 +82,20 @@ def bizcard():
     )
 
 
+@app.route("/formularz/", methods=["GET", "POST"])
+def my_form():
+    if request.method == "POST":
+        data = request.form
+        name = data["name"]
+        last_name = data["lastname"]
+        gender = data["gender"]
+        hobby = data.getlist("hobby")
+
+        logger.info(f"{name} {last_name} {gender} {hobby}")
+        return "POST OK"
+    else:
+        return render_template("formularz.html")
+
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

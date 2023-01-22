@@ -17,3 +17,24 @@ Stwórz aplikację która w oparciu o adresy będzie realizowa dwuargumentowy ka
 /bizcard/ - na podstawie słownika - dane osoby
 
 imie, nazwisko, wiek, bio
+
+
+# TODO
+
+Nowy projekt pycharm
+
+GET /todos/  - lista todo do zrobienia
+POST /todos/ - dodanie nowego todo
+/todos/<id>/ - szczególy danego todo
+
+
+todos =[ 
+{ 
+    "id": 1,
+    "title": "Kupi parówki",
+    "description": "Jak są jajka to kup 10",
+    "done": False
+}
+
+]
+
