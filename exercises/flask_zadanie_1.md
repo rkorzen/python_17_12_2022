@@ -11,3 +11,9 @@ Stwórz aplikację która w oparciu o adresy będzie realizowa dwuargumentowy ka
 /maths/div/3/0  -> Dzielenie przez zero!
 
 
+# wizytówka
+
+/about/ - niech wyświelti jakiś tekst (Lorem ipsum)
+/bizcard/ - na podstawie słownika - dane osoby
+
+imie, nazwisko, wiek, bio
