@@ -12,6 +12,7 @@ app = Flask(__name__)
 def home():
     return f"Hello Flask!"
 
+
 @app.route("/message/", methods=["GET", "POST"])
 def post_message():
     if request.method == "POST":
@@ -19,6 +20,7 @@ def post_message():
         return "POST OK"
     else:
         return "OK"
+
 
 @app.route("/<name>/")
 def home2(name):
@@ -39,10 +41,41 @@ def template_view():
         data=["ala", "kot"],
         oceny=[["a", "b", "c"], 2, 3, 4, 5],
         dane={"psy": 100, "słonie": 1}
-
-
     )
 
+
+@app.route("/examples/xxx/")
+def template_view2():
+    return render_template(
+        "content.html",
+        data=[1, 2, 3, 4, 5],
+        oceny=[0, 0, 0, 0, 0, 0],
+        dane=[0, 0, 0, 0, 0]
+    )
+
+
+@app.route("/about/")
+def about():
+    text = "jakis dlugoi opis ..."
+    return render_template(
+        "about.html",
+        text=text
+    )
+
+
+@app.route("/bizcard/")
+def bizcard():
+    person = {
+        "name": "Rafał",
+        "last_name": "Korzeniewski",
+        "age": 42,
+        "bio": "Fizyk muzyk puzonista"
+    }
+
+    return render_template(
+        "card.html",
+        person=person
+    )
 
 
 if __name__ == "__main__":

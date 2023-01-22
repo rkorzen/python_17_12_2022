@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %} Wizytówka {% endblock %}
+
+{% block content %}
+<h1>Dane:</h1>
+<h2>Osoba: {{ person.name }} {{ person.last_name }}</h2>
+<p>Wiek: {{ person.age }}</p>
+<p>Bio: {{ person.bio }}</p>
+{% endblock %}
