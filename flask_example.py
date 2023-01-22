@@ -1,7 +1,6 @@
 import logging
 
 from flask import Flask, request, render_template
-
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
