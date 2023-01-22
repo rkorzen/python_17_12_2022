@@ -38,3 +38,6 @@ todos =[
 
 ]
 
+
+# Przerobi todo w ten sposób, by dane zapisywałyt się w json (do pliku)
+
