@@ -48,10 +48,16 @@ wykorzystujac kod przygotowany do aplikacji flaskowej
 
 https://github.com/rkorzen/python_17_12_2022/blob/master/web_projects/flask_projects/todos/db.py
  
-wykorzystaj istneijące todos.json
+wykorzystaj istniejący todos.json
 
 wyświetlamy todosy:
 
 1. widok wyświetlający listę todos
 2. widok szczegółów
 
+
+##  dodajemy update todo
+
+   - formularz na stronie szczegółów
+   - obsługa metody POST w widoku details
+   - akutalizacja serwisu - dodanie metody update

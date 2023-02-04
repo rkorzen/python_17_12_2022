@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
     "calculus",
     "main",
-
+    "tasks",
 
 ]
 
