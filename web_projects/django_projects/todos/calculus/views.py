@@ -19,5 +19,5 @@ def home(request):
     return render(
         request,
         "calculus/home.html",
-        {}
+        {"operations": [x for x in operations]}
     )

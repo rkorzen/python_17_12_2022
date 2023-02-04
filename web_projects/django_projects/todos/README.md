@@ -31,3 +31,21 @@ Dodaj szablon w aplikacji calculus - dla operacji.
 Popraw szablon (z użyciem extends ) dla widoku calculus/home
 
 przekaż do kontekstu zestaw dostępnych operacji. 
+
+
+Jeśli chcesz wykoma dodawanie, to wejdź na adres
+
+/calculus/add/1/2/
+
+rezultatem będzie wypisane 
+
+Result: 3
+
+
+## tworzymy aplikacje tasks
+
+wykorzystujac kod przygotowany do aplikacji flaskowej
+
+https://github.com/rkorzen/python_17_12_2022/blob/master/web_projects/flask_projects/todos/db.py
+
+wyświetlamy todosy
