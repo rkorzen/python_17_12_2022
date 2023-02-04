@@ -25,3 +25,9 @@
 ## Dodanie szablonu
 
 Dodaj szablon w aplikacji calculus - dla operacji. 
+
+## Uzycie szablonu
+
+Popraw szablon (z użyciem extends ) dla widoku calculus/home
+
+przekaż do kontekstu zestaw dostępnych operacji. 
