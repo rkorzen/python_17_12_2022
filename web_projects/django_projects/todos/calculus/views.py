@@ -8,7 +8,11 @@ from calculus.services import handle_calculation, operations
 
 def calculator(request, op, a, b):
     result = handle_calculation(op, a, b)
-    return HttpResponse(result)
+    return render(
+        request,
+       "calculus/calculations.html",
+        {"result": result}
+    )
 
 def home(request):
     # return HttpResponse(f"Dostępne operacje: {[x for x in operations]}")
