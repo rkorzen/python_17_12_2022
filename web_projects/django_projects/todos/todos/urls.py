@@ -16,16 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from calculus.views import calculator
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("main.urls")),
-
-
-    # calculus/add/1/2/
-    # calculus/add/a/b/
-    path("calculus/<op>/<int:a>/<int:b>/", calculator)
-
+    path("calculus/", include("calculus.urls")),
 ]
 

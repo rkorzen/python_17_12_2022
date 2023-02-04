@@ -21,3 +21,7 @@
 
 
     Dostępne operacje to: add, sub, mul, div
+
+## Dodanie szablonu
+
+Dodaj szablon w aplikacji calculus - dla operacji. 
