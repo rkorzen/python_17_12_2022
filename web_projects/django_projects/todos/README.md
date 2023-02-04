@@ -47,5 +47,11 @@ Result: 3
 wykorzystujac kod przygotowany do aplikacji flaskowej
 
 https://github.com/rkorzen/python_17_12_2022/blob/master/web_projects/flask_projects/todos/db.py
+ 
+wykorzystaj istneijące todos.json
 
-wyświetlamy todosy
+wyświetlamy todosy:
+
+1. widok wyświetlający listę todos
+2. widok szczegółów
+
