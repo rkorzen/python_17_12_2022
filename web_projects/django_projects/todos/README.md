@@ -97,3 +97,24 @@ python manage.py inspectdb  # tworzenie modeli na podstawie istniejącej bazy da
 
 https://docs.djangoproject.com/en/4.1/howto/custom-management-commands/
 
+## cofanie migracji
+
+jesli w tasks mamy 3 migracje o numerach 0001, 0002, 0003
+
+i są one wykonane
+
+to cofniecie sie do 0002 realizujemy poleceniem:
+
+python manage.py migrate tasks 0002
+
+jeżeli to była custom migration to musi by reverse code
+
+
+migrations.RunPython(add_tasks, reverse_code=reverse_code),
+
+reverse_code - to jakaś funkcja - może nic nie robic
+
+```
+def reverse_code(apps, schema_editor):
+    pass
+```
