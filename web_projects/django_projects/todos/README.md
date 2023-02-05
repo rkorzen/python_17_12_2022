@@ -70,4 +70,30 @@ Obsługa formularza contact
 - dodac widok (+ url)
 - wyprintowac dane wysłane z formularza
 
-## przerobi formularz kontaktowy na bootstrapowy - przy pomocy crispy
+## przerobic formularz kontaktowy na bootstrapowy - przy pomocy crispy
+
+## Django extensions
+
+https://django-extensions.readthedocs.io/en/latest/shell_plus.html?highlight=print%20sql#sql-queries
+
+# Migracje
+
+python manage.py showmigrations   # pokazuje stan wykonania migracji
+python manage.py makemigrations   # przygotowuje migracje
+python manage.py makemigrations --empty tasks  # tworzy pustą migrację w aplikacji tasks
+python manage.py sqlmigrate tasks 0002   # pokazuje sql jaki bedzie wykonany dla migracji 0002 z aplikacji tasks
+
+python manage.py migrate # wykona niewykoanne migracje
+
+jakby trzeba było wykona migrację... nie wykonując sqla
+
+https://stackoverflow.com/questions/46772762/django-migrate-fake-and-fake-initial-explained
+
+
+python manage.py inspectdb  # tworzenie modeli na podstawie istniejącej bazy danych
+
+
+## django management commands(in shell)
+
+https://docs.djangoproject.com/en/4.1/howto/custom-management-commands/
+

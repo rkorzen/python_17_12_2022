@@ -2,6 +2,7 @@ import json
 from dataclasses import dataclass
 from django.conf import settings
 
+
 @dataclass
 class Todo:
     id: int
@@ -13,7 +14,7 @@ class Todo:
 class Todos:
 
     def __init__(self, file_name=settings.BASE_DIR / "data/todos.json"):
-    # def __init__(self, file_name):
+        # def __init__(self, file_name):
         self.file_name = file_name
         self.load_data()
 
@@ -68,6 +69,7 @@ class Todos:
 if __name__ == "__main__":
     pass
 
+
 # with Todos() as todos:
 #     print(todos.all())
 #
@@ -79,3 +81,19 @@ if __name__ == "__main__":
 # data = {"title": "cos tam"}
 #
 # todos.update(id=1, data=data)
+
+
+class TaskLoadData:
+
+    def __init__(self, klass):
+        # def __init__(self, file_name):
+        self.data = Todos().all()
+        self.model_class = klass
+
+    def insert(self):
+        for d in self.data:
+            t = self.model_class()  # Todo
+            t.title = d.title
+            t.description = d.description
+            t.done = d.done
+            t.save()
