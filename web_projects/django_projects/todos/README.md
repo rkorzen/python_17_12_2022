@@ -118,3 +118,29 @@ reverse_code - to jakaś funkcja - może nic nie robic
 def reverse_code(apps, schema_editor):
     pass
 ```
+
+
+## ORM 
+
+
+### tworzenie
+Todo.objects.create(title="costam", description="costam") # tworzenie instancji i zapisywanie
+
+```
+   # alternatywnie
+   t = Todo()
+   t.title = "costam"
+   t.description = "csota"
+   t.save()
+```
+
+### Pobieranie
+
+Task.objects.all()
+Task.objects.first()
+Task.objects.last()
+
+Task.objects.filter(title__endswith="k")   # zwraca queryset obiektow ktorych tytul konczy sie na k
+Task.objects.get(id=1)  # zwraca obiekt o id=1
+
+

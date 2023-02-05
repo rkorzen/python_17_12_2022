@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
 from tasks.forms import TodoForm, TodoFormset
-from tasks.services import Todos
+from tasks.models import Todo
+from tasks.services import ModelTodosService as Todos
 
 
 def tasks_list(request):
@@ -52,3 +53,11 @@ def task_details(request, id):
         "tasks/details.html",
         {"todo": task}
     )
+
+
+def add_task(request):
+
+    if request.method == "POST":
+
+        t = Todo.objects.create()
+

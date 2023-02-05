@@ -66,6 +66,10 @@ class Todos:
         print("Dane zapisane")
 
 
+class ModelTodosService:
+    ...
+
+
 if __name__ == "__main__":
     pass
 
