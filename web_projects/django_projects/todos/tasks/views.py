@@ -48,6 +48,7 @@ def task_details(request, id):
 
     with Todos() as todos:
         task = todos.get(id)
+
     return render(
         request,
         "tasks/details.html",

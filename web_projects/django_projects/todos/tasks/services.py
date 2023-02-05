@@ -1,7 +1,7 @@
 import json
 from dataclasses import dataclass
 from django.conf import settings
-
+from tasks.models import Todo as ModelTodo
 
 @dataclass
 class Todo:
@@ -67,25 +67,34 @@ class Todos:
 
 
 class ModelTodosService:
-    ...
 
+    def __enter__(self):
+        return self
 
-if __name__ == "__main__":
-    pass
+    def __exit__(self, exc_type, exc_value, exc_tb):
+        pass
 
+    def all(self):
+        return ModelTodo.objects.all()
 
-# with Todos() as todos:
-#     print(todos.all())
-#
+    def get(self, id):
+        return ModelTodo.objects.get(id=id)
 
+    def update(self, id, data):
+        if 'csrfmiddlewaretoken' in data: data.pop('csrfmiddlewaretoken')
+        t = self.get(id)
+        for k, v in data.items():
+            if k == "done": v = bool(v)
+            setattr(t, k, v)
+        if 'done' not in data:
+            t.done = False
+        t.save()
+        return t
 
-#
-# todos = Todos(file_name="../data/todos.json")
-# print(todos.all())
-# data = {"title": "cos tam"}
-#
-# todos.update(id=1, data=data)
-
+    def create(self, data):
+        if 'csrfmiddlewaretoken' in data: data.pop('csrfmiddlewaretoken')
+        t = ModelTodo.objects.create(**data)
+        return t
 
 class TaskLoadData:
 

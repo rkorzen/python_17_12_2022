@@ -144,3 +144,22 @@ Task.objects.filter(title__endswith="k")   # zwraca queryset obiektow ktorych ty
 Task.objects.get(id=1)  # zwraca obiekt o id=1
 
 
+## Cwiczenie - napisz nowy serwis
+
+Ma dzialac jak poprzedni (mam miec te same metody) ale implementcja oparat o Djangowy model
+
+
+## Cwiczenie
+
+- tworzymy nowa aplikację books
+- tworzymy model Book
+  - title
+  - description
+  - year
+  - author
+- widok listy ksiażek
+- widok szczegółów książki
+- do tego szablony
+- formularz - do dodania i aktualizacji ksiazki
+
+Można zrobi serwis. Lub korzysta z metod ORM w widoku
