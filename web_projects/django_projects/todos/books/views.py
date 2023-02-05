@@ -12,7 +12,8 @@ def book_list(request):
     if request.method == "POST":
         form = BookForm(data=request.POST)
         if form.is_valid():
-            Book.objects.create(**form.cleaned_data)
+            # Book.objects.create(**form.cleaned_data)
+            form.save()
 
     form = BookForm()
 
@@ -26,12 +27,15 @@ def book_list(request):
 def book_details(request, id):
     book = Book.objects.get(pk=id)
     if request.method == "POST":
-        form = BookForm(data=request.POST)
+        form = BookForm(instance=book, data=request.POST)
         if form.is_valid():
-            for field, value in form.cleaned_data.items():
-                setattr(book, field, value)
+            # for field, value in form.cleaned_data.items():
+            #     setattr(book, field, value)
 
-    form = BookForm(data=book.__dict__)
+            form.save()
+
+    # form = BookForm(data=book.__dict__)
+    form = BookForm(instance=book)
 
     return render(
         request,

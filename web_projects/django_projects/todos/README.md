@@ -169,3 +169,14 @@ Można zrobi serwis. Lub korzysta z metod ORM w widoku
 
 - zmien w books formularze na formularze oparte o model
 - tworz instancje w oparciu o model
+
+
+# Panel Admina
+
+## Logowanie
+
+
+http://127.0.0.1:8000/admin
+
+
+     python manage.py createsuperuser 
