@@ -4,10 +4,14 @@
 {% block content %}
 
   <h1>Zadania</h1>
-  {{ todos }}
+  <div class="row">
+  <div class="col-lg-4">Szybko</div>
+  <div class="col-lg-4">Tanio</div>
+  <div class="col-lg-4">Dobrze</div>
+  </div>
   <ul>
     {% for todo in todos %}
-      <li><a href="/todos/{{ todo.id }}/">{{ todo.title }}</a> </li>
+      <li class="col-3"><a href="/todos/{{ todo.id }}/">{{ todo.title }}</a> </li>
     {% endfor %}
     </ul>
 
@@ -18,15 +22,11 @@
 
   <form method="POST">
     {% csrf_token %}
-    {{ form }}
+    {{ formset.as_p }}
     <input type="submit" value="add">
   </form>
 
-  <form method="POST" action="/contact/">
-    {% csrf_token %}
-    {{ contact_form }}
-    <input type="submit" value="send">
-  </form>
+
 
 
 {% endblock %}

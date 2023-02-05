@@ -1,13 +1,13 @@
 from django.shortcuts import render
 
-from tasks.forms import TodoForm, ContactForm
+from tasks.forms import TodoForm, TodoFormset
 from tasks.services import Todos
 
 
 def tasks_list(request):
 
     form = TodoForm()
-    contact_form = ContactForm()
+    formset = TodoFormset()
 
     if request.method == "POST":
 
@@ -31,7 +31,7 @@ def tasks_list(request):
     return render(
         request,
         "tasks/list.html",
-        {"todos": tasks, "form": form, "contact_form": contact_form}
+        {"todos": tasks, "form": form, "formset": formset}
     )
 
 
