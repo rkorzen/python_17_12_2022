@@ -13,6 +13,7 @@ class Todo:
 class Todos:
 
     def __init__(self, file_name=settings.BASE_DIR / "data/todos.json"):
+    # def __init__(self, file_name):
         self.file_name = file_name
         self.load_data()
 
@@ -43,6 +44,17 @@ class Todos:
         self.todos.append(todo)
         self.save_data()
 
+    def update(self, id: int, data: dict):
+        todo = self.get(id)
+        for k, v in data.items():
+            if k == "id": continue
+            setattr(todo, k, v)
+
+        if 'done' not in data:
+            todo.done = False
+
+        self.save_data()
+
     def __enter__(self):
         self.load_data()
         print("Dane załadowane")
@@ -53,13 +65,17 @@ class Todos:
         print("Dane zapisane")
 
 
+if __name__ == "__main__":
+    pass
+
 # with Todos() as todos:
 #     print(todos.all())
 #
 
 
 #
-# todos = Todos()
-
+# todos = Todos(file_name="../data/todos.json")
 # print(todos.all())
-# print("Po context managerze")
+# data = {"title": "cos tam"}
+#
+# todos.update(id=1, data=data)

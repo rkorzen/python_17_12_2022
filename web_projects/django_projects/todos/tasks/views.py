@@ -32,6 +32,15 @@ def tasks_list(request):
 
 
 def task_details(request, id):
+
+    if request.method == "POST":
+        data = dict(request.POST)
+        data.pop("csrfmiddlewaretoken")
+        print(data)
+        with Todos() as todos:
+            data = {k: v[0] for k, v in data.items()}
+            todos.update(id, data)
+
     with Todos() as todos:
         task = todos.get(id)
     return render(
