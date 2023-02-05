@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
 <table>
@@ -9,7 +9,12 @@
 
 </table>
 
+  <form method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
 
-{% include "tasks/includes/todo_form.html" %}
+    <input type="submit" value="add">
+  </form>
+
 
 {% endblock %}

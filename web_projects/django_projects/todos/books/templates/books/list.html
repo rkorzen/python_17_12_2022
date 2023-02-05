@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+  <h1>Lista książek</h1>
+  <ul>
+  {% for book in books %}
+    <li><a href="/books/{{ book.id }}">{{ book }}</a></li>
+  {% endfor %}
+  </ul>
+
+  <div>
+    {% crispy form %}
+  </div>
+
+
+{% endblock %}

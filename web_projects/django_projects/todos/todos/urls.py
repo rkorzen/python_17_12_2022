@@ -21,6 +21,7 @@ urlpatterns = [
     path("", include("main.urls")),
     path("calculus/", include("calculus.urls")),
     path("todos/", include("tasks.urls")),
+    path("books/", include("books.urls"))
 
 ]
 

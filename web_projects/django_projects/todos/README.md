@@ -163,3 +163,9 @@ Ma dzialac jak poprzedni (mam miec te same metody) ale implementcja oparat o Dja
 - formularz - do dodania i aktualizacji ksiazki
 
 Można zrobi serwis. Lub korzysta z metod ORM w widoku
+
+
+## Cwiczenie - forms.ModelForm
+
+- zmien w books formularze na formularze oparte o model
+- tworz instancje w oparciu o model
