@@ -61,3 +61,11 @@ wyświetlamy todosy:
    - formularz na stronie szczegółów
    - obsługa metody POST w widoku details
    - akutalizacja serwisu - dodanie metody update
+
+
+## Dodanie końcówki /contact/
+
+Obsługa formularza contact
+- przeniesc w całosci formularz contact do aplikacji main
+- dodac widok (+ url)
+- wyprintowac dane wysłane z formularza

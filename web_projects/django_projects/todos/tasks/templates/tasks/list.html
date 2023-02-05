@@ -14,4 +14,19 @@
   <br>
   {% include "tasks/includes/todo_form.html" %}
 
+  <br>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="add">
+  </form>
+
+  <form method="POST" action="/contact/">
+    {% csrf_token %}
+    {{ contact_form }}
+    <input type="submit" value="send">
+  </form>
+
+
 {% endblock %}

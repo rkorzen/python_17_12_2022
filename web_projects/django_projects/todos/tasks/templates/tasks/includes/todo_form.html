@@ -4,8 +4,8 @@
         <input type="text" id="title" name="title" value="{{ todo.title }}">
 
         <label for="description">Description</label>
-        <input type="text" id="description" name="description" value="{{ todo.description }}">
-
+{#        <input type="text" id="description" name="description" value="{{ todo.description }}">#}
+        <textarea name="description" id="description" value="{{ todo.description }}" cols=40 rows=10></textarea>
         <label for="done">Done</label>
         <input type="checkbox" id="done" name="done" {% if todo.done %}checked{% endif %}>
 
