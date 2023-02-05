@@ -69,3 +69,5 @@ Obsługa formularza contact
 - przeniesc w całosci formularz contact do aplikacji main
 - dodac widok (+ url)
 - wyprintowac dane wysłane z formularza
+
+## przerobi formularz kontaktowy na bootstrapowy - przy pomocy crispy
