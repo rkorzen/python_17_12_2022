@@ -95,5 +95,5 @@ class TaskLoadData:
             t = self.model_class()  # Todo
             t.title = d.title
             t.description = d.description
-            t.done = d.done
+            t.done = bool(d.done)
             t.save()
