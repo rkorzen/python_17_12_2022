@@ -204,3 +204,8 @@ Dodaj to do PA
 ## cwiczenei
 
 wprowadz relację M2M pomiedzy Book a Tag (po stronie Book ) + PA
+
+## Cwiczenie
+
+Dodaj kolejny mixin rozszerzając klasę abstrakcujna timestamped - niech sprawdza czy był modyfikowany w ciagu ostatnich x minut
+
