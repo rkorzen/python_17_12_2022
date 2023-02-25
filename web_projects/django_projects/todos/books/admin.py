@@ -1,6 +1,10 @@
 from django.contrib import admin
 from .models import Book, Author, AuthorProfile
-
+from import_export import resources
+from import_export.admin import ExportMixin
+class BookResource(resources.ModelResource):
+    class Meta:
+        model = Book
 
 # Register your models here.
 
@@ -8,10 +12,10 @@ from .models import Book, Author, AuthorProfile
 #     model = Author
 
 @admin.register(Book)
-class BookAdmin(admin.ModelAdmin):
+class BookAdmin(ExportMixin, admin.ModelAdmin):
     list_display = ["title", "author"]
     search_fields = ["title", "author", "description"]
-    # inlines = [AuthorInline]
+    resource_class = BookResource
 
 class AuthorProfileInline(admin.StackedInline):
     model = AuthorProfile

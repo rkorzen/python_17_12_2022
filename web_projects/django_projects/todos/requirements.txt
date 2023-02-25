@@ -4,3 +4,4 @@ crispy-bootstrap5
 # komentarz
 # -r core.txt
 django-import-export
+pillow

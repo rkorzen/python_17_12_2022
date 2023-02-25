@@ -12,7 +12,8 @@ class Post(Timestamped):
     title = models.CharField(max_length=255)
     content = models.TextField()
     tags = models.ManyToManyField("tags.Tag", related_name="posts", blank=True)
-
+    img = models.ImageField(upload_to="posts/images/%Y/%m/%d/", blank=True, null=True)
+    datafile = models.FileField(upload_to="posts/files/%Y/%m/%d/",  blank=True, null=True)
     def __str__(self): return f"{self.title}"
 
     # class Meta:

@@ -219,3 +219,9 @@ rozszerz Book o Timestamped
 
 export ksiazek w Panelu Admina
 
+
+## Cwiczenie
+
+Dodaj okładkę (ImageField) dla Book
+
+
