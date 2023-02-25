@@ -209,3 +209,8 @@ wprowadz relację M2M pomiedzy Book a Tag (po stronie Book ) + PA
 
 Dodaj kolejny mixin rozszerzając klasę abstrakcujna timestamped - niech sprawdza czy był modyfikowany w ciagu ostatnich x minut
 
+## Cwiczenie
+
+wyodrebnij stworzone mixiny do common.mixins
+wyodrębnij nasz model abstrakcyjny do common.models
+rozszerz Book o Timestamped

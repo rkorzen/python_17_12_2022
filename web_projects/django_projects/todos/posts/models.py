@@ -11,7 +11,15 @@ class CheckAgeMixin:
         return (now() - self.created) > delta
 
 
-class Timestamped(models.Model, CheckAgeMixin):
+class LastModifiedMixin:
+
+    def is_modified_in_last(self, minutes=15):
+        """Czy modyfikowany w ciągu ostatnich minutes"""
+        delta = timedelta(minutes=minutes)
+        return (now() - self.modified) < delta
+
+
+class Timestamped(models.Model, CheckAgeMixin, LastModifiedMixin):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
