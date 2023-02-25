@@ -3,3 +3,4 @@ django-crispy-forms==1.14.0
 crispy-bootstrap5
 # komentarz
 # -r core.txt
+django-import-export

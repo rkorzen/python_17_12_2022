@@ -1,30 +1,10 @@
 from django.db import models
-from django.utils.timezone import now, timedelta
-
+from common.models import Timestamped
 
 # Create your models here.
 
-class CheckAgeMixin:
-
-    def is_older_than(self, days=1):
-        delta = timedelta(days=days)
-        return (now() - self.created) > delta
 
 
-class LastModifiedMixin:
-
-    def is_modified_in_last(self, minutes=15):
-        """Czy modyfikowany w ciągu ostatnich minutes"""
-        delta = timedelta(minutes=minutes)
-        return (now() - self.modified) < delta
-
-
-class Timestamped(models.Model, CheckAgeMixin, LastModifiedMixin):
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        abstract = True
 
 
 class Post(Timestamped):

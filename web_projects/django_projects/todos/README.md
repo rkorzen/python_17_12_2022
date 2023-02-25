@@ -214,3 +214,8 @@ Dodaj kolejny mixin rozszerzając klasę abstrakcujna timestamped - niech sprawd
 wyodrebnij stworzone mixiny do common.mixins
 wyodrębnij nasz model abstrakcyjny do common.models
 rozszerz Book o Timestamped
+
+## Cwiczenie
+
+export ksiazek w Panelu Admina
+

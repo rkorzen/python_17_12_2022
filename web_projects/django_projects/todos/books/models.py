@@ -1,4 +1,5 @@
 from django.db import models
+from common.models import Timestamped
 
 
 # Create your models here.
@@ -16,7 +17,8 @@ class Author(models.Model):
 
     def __str__(self): return f"{self.first_name} {self.last_name}"
 
-class Book(models.Model):
+
+class Book(Timestamped):
     title = models.CharField(max_length=200)
     description = models.TextField()
     author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True, related_name="books")
