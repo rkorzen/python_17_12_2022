@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "tasks",
     "books",
     'accounts',
+    "posts",
+    "tags",
 
 ]
 

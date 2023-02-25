@@ -199,3 +199,8 @@ W PA dla książki dodaj inline z autorem
 Utwórz aplikację posts.
 Oprócz pól takich jak title, description powinna byc tam relacja O2M / M2O (ForeginKey) z userem (auth.User)
 Dodaj to do PA
+
+
+## cwiczenei
+
+wprowadz relację M2M pomiedzy Book a Tag (po stronie Book )
