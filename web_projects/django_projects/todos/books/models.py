@@ -23,6 +23,6 @@ class Book(Timestamped):
     description = models.TextField()
     author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True, related_name="books")
     year = models.SmallIntegerField()
-
+    cover = models.ImageField(upload_to="books/covers/%Y/%m/", blank=True, null=True)
     def __str__(self):
         return f"{self.title} ({self.author})"

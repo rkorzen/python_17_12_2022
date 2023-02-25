@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{post.title}}</h1>
+<small>Created: {{post.created}}</small>
+<div class="row">
+ <div class="col-sm-12 col-md-6"><p>{{ post.content }}</p></div>
+  <div class="col-sm-12 col-md-6"><img src="{{post.img.url}}" width="100%"></div>
+</div>
+
+
+{% endblock %}

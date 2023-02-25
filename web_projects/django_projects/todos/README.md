@@ -223,5 +223,7 @@ export ksiazek w Panelu Admina
 ## Cwiczenie
 
 Dodaj okładkę (ImageField) dla Book
+## Cwiczenie 
 
+wyświetl okłądkę w widoku szczegółów książki
 
