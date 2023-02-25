@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "main",
     "tasks",
     "books",
+    'accounts',
 
 ]
 
@@ -134,3 +135,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+SHELL_PLUS_PRINT_SQL = True

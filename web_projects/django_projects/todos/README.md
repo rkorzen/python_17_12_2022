@@ -180,3 +180,11 @@ http://127.0.0.1:8000/admin
 
 
      python manage.py createsuperuser 
+
+
+# Relacje
+
+## cwiczenie
+
+w aplikacji books utwórz model reprezentujący autora oraz model profil autora któ®y będzie w relacji O2O 
+z Autorem.
