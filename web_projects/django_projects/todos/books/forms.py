@@ -8,7 +8,7 @@ from books.models import Book
 class BookForm_old(forms.Form):
     title = forms.CharField()
     description = forms.CharField(widget=forms.Textarea)
-    author = forms.CharField()
+    # author = forms.CharField()
     year = forms.IntegerField()
 
 
@@ -28,4 +28,6 @@ class BookForm(forms.ModelForm):
 
     class Meta:
         model = Book
-        fields = ["title", "description", "author", "year"]
+        fields = ["title", "description",
+                  "author",
+                  "year"]

@@ -188,3 +188,7 @@ http://127.0.0.1:8000/admin
 
 w aplikacji books utwórz model reprezentujący autora oraz model profil autora któ®y będzie w relacji O2O 
 z Autorem.
+
+## cwiczenie
+
+W PA dla książki dodaj inline z autorem
