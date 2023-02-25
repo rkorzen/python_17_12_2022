@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from books.forms import BookForm
 from books.models import Book
-
+from django.conf import settings
 
 # Create your views here.
 
@@ -10,7 +10,7 @@ def book_list(request):
     books = Book.objects.all()
 
     if request.method == "POST":
-        form = BookForm(data=request.POST)
+        form = BookForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             # Book.objects.create(**form.cleaned_data)
             form.save()
@@ -27,7 +27,7 @@ def book_list(request):
 def book_details(request, id):
     book = Book.objects.get(pk=id)
     if request.method == "POST":
-        form = BookForm(instance=book, data=request.POST)
+        form = BookForm(instance=book, data=request.POST, files=request.FILES)
         if form.is_valid():
             # for field, value in form.cleaned_data.items():
             #     setattr(book, field, value)
@@ -42,3 +42,19 @@ def book_details(request, id):
         "books/details.html",
         {"book": book, "form": form}
     )
+
+
+
+def handle_uploaded_file(f, path):
+    with open(path, "wb+") as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+def upload_file(request):
+
+    if request.method == "POST":
+        name = settings.MEDIA_ROOT + "/books/images/xxx.jpg"
+        f = request.FILES["upload_file"]
+        handle_uploaded_file(f, name)
+
+
+    return render(request, "books/cover_upload.html", {})

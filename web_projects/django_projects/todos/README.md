@@ -227,3 +227,7 @@ Dodaj okładkę (ImageField) dla Book
 
 wyświetl okłądkę w widoku szczegółów książki
 
+## Cwiczenia
+
+Dodaj w UserProfile zdjecie. Uzyj formularza opartego o model by w nowym widoku i szablonie uzyc formularza do edycji profilu
+
