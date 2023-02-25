@@ -203,4 +203,4 @@ Dodaj to do PA
 
 ## cwiczenei
 
-wprowadz relację M2M pomiedzy Book a Tag (po stronie Book )
+wprowadz relację M2M pomiedzy Book a Tag (po stronie Book ) + PA
