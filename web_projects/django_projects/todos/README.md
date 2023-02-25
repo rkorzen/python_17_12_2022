@@ -192,3 +192,10 @@ z Autorem.
 ## cwiczenie
 
 W PA dla książki dodaj inline z autorem
+
+
+## cwiczenie
+
+Utwórz aplikację posts.
+Oprócz pól takich jak title, description powinna byc tam relacja O2M / M2O (ForeginKey) z userem (auth.User)
+Dodaj to do PA
