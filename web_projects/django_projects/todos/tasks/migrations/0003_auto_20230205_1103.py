@@ -3,15 +3,18 @@
 from django.db import migrations, transaction
 from tasks.services import TaskLoadData
 
+
 def add_tasks(apps, schema_editor):
     with transaction.atomic():
-        Todo = apps.get_model('tasks', 'Todo')
+        Todo = apps.get_model("tasks", "Todo")
         tld = TaskLoadData(klass=Todo)
         tld.insert()
     print("Done!")
 
+
 def reverse_code(apps, schema_editor):
     pass
+
 
 class Migration(migrations.Migration):
 
@@ -21,5 +24,4 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RunPython(add_tasks, reverse_code=reverse_code),
-
     ]

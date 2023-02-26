@@ -12,6 +12,7 @@ class Bar:
     def baz(self):
         """To jest docstring metody"""
 
+
 # Odkomentuj i uruchom
 # print(help(__name__))
 # print(help(foo))

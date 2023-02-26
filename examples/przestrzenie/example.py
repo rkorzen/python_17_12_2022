@@ -1,5 +1,6 @@
 a = 1
 
+
 def foo():
     b = 1
     global a

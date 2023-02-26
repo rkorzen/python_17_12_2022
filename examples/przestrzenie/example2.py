@@ -10,10 +10,11 @@ def foo():
         print(b)
 
         b += 10
-        print("locals baz",  locals())
+        print("locals baz", locals())
         print(globals())
 
     print("locals foo", locals())
     baz()
+
 
 foo()

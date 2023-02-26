@@ -9,8 +9,8 @@ from common.views import paginate
 
 # Create your views here.
 
-def book_list(request):
 
+def book_list(request):
     page_obj = paginate(request, Book)
 
     if request.method == "POST":
@@ -22,11 +22,7 @@ def book_list(request):
 
     form = BookForm()
 
-    return render(
-        request,
-        "books/list.html",
-        {"page_obj": page_obj, "form": form}
-    )
+    return render(request, "books/list.html", {"page_obj": page_obj, "form": form})
 
 
 def book_details(request, id):
@@ -42,11 +38,7 @@ def book_details(request, id):
     # form = BookForm(data=book.__dict__)
     form = BookForm(instance=book)
 
-    return render(
-        request,
-        "books/details.html",
-        {"book": book, "form": form}
-    )
+    return render(request, "books/details.html", {"book": book, "form": form})
 
 
 def handle_uploaded_file(f, path):

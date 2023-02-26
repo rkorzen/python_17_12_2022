@@ -12,18 +12,14 @@ class BookForm_old(forms.Form):
     year = forms.IntegerField()
 
     helper = FormHelper()
-    helper.add_input(Submit('submit', 'Submit', css_class='btn-primary'))
+    helper.add_input(Submit("submit", "Submit", css_class="btn-primary"))
     # helper.form_method = 'POST'
 
 
 class BookForm(forms.ModelForm):
-    # title = forms.CharField()
-    # description = forms.CharField(widget=forms.Textarea)
-    # author = forms.CharField()
-    # year = forms.IntegerField()
 
     helper = FormHelper()
-    helper.add_input(Submit('submit', 'Submit', css_class='btn-primary'))
+    helper.add_input(Submit("submit", "Submit", css_class="btn-primary"))
 
     class Meta:
         model = Book

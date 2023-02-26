@@ -39,7 +39,6 @@ $ python3 -m pakiet_zewnetrzny.pakiet_wewnetrzny.modul_wewnetrzny
 from pakiet_zewnetrzny.modul_zewnetrzny_2 import funkcja_z_modulu_zewnetrznego
 
 
-
 def funkcja_z_modulu_wewnetrznego():
     print(f"funkcja z modułu {__name__} z pakietu {__package__}")
 
@@ -47,4 +46,3 @@ def funkcja_z_modulu_wewnetrznego():
 if __name__ == "__main__":
 
     funkcja_z_modulu_zewnetrznego()
-    

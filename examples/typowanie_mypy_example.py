@@ -9,8 +9,10 @@ a: int = 1
 # Numeric = int | float # >3.10
 Numeric = Union[int, float]
 
+
 def suma(a: Numeric, b: Numeric, c: Optional[int] = None) -> Numeric:
     return a + b
+
 
 print(suma(1, 2))
 print(suma(1.1, 2.2))

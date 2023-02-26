@@ -20,7 +20,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = "django-insecure-vsx1nio)g!fdlw2bl%67(t@4eaz+=^3+0)fpbj-g(*+ns6@(5&"
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-vsx1nio)g!fdlw2bl%67(t@4eaz+=^3+0)fpbj-g(*+ns6@(5&")
+SECRET_KEY = os.environ.get(
+    "DJANGO_SECRET_KEY",
+    "django-insecure-vsx1nio)g!fdlw2bl%67(t@4eaz+=^3+0)fpbj-g(*+ns6@(5&",
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,24 +39,21 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "crispy_forms",
     "crispy_bootstrap5",
     "import_export",
-
     "calculus",
     "main",
     "tasks",
     "books",
-    'accounts',
+    "accounts",
     "posts",
     "tags",
-
 ]
 
 if DEBUG:
     INSTALLED_APPS += [
-        'django_extensions',
+        "django_extensions",
     ]
 
 MIDDLEWARE = [

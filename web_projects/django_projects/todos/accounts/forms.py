@@ -7,7 +7,7 @@ from crispy_forms.layout import Submit
 class UserProfileForm(forms.ModelForm):
 
     helper = FormHelper()
-    helper.add_input(Submit('submit', 'Submit', css_class='btn-primary'))
+    helper.add_input(Submit("submit", "Submit", css_class="btn-primary"))
 
     class Meta:
         model = UserProfile

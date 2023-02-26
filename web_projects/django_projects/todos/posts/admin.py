@@ -11,11 +11,9 @@ class PostResource(resources.ModelResource):
         model = Post
 
 
-
-
 # Register your models here.
 @admin.register(Post)
 class PostAdmin(ImportExportMixin, TagAdminHorizontal):
     readonly_fields = ("created", "modified")
     resource_class = PostResource
-    autocomplete_fields = ("tags", )
+    autocomplete_fields = ("tags",)

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -12,5 +12,8 @@
 
 {% include "common/includes/paginator.html" %}
 
+{% if user.is_authenticated %}
+{% crispy form %}
+{% endif %}
 
 {% endblock %}

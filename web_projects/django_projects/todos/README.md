@@ -254,3 +254,34 @@ link do strony wylogowania
 ## Zadanie
 
 Powtórzenie dla postów - dodanie nazw dla ścieżek w urls i dodanie namespace
+
+## Instalacja i integracja z black
+
+### instalacja narzedzia 
+
+pip install "black[d]"  
+
+### uruchomienie
+
+black nazwa_pliku  # sformatuje plik
+
+black .  # wszystkie pliki w bieżącej lokalizacji i głębiej
+
+### BlackConnect
+
+Zainstalwac BlackConnect i zaznaczy opcję trigger when save ... 
+upewnij sie, ze blackd (proces) zyje
+
+
+## pre hooki w git 
+
+https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/
+
+## zadanie
+
+wykorzystując poradnik:
+
+https://ordinarycoders.com/blog/article/django-user-register-login-logout
+
+dodaj rejestrację użytkownika
+

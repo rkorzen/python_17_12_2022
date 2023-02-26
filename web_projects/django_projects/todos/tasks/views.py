@@ -33,9 +33,7 @@ def tasks_list(request):
         tasks = todos.all()
 
     return render(
-        request,
-        "tasks/list.html",
-        {"todos": tasks, "form": form, "formset": formset}
+        request, "tasks/list.html", {"todos": tasks, "form": form, "formset": formset}
     )
 
 
@@ -54,11 +52,7 @@ def task_details(request, id):
 
     form = TodoForm2(instance=task)
 
-    return render(
-        request,
-        "tasks/details.html",
-        {"todo": task, "form": form}
-    )
+    return render(request, "tasks/details.html", {"todo": task, "form": form})
 
 
 def add_task(request):
@@ -66,4 +60,3 @@ def add_task(request):
     if request.method == "POST":
 
         t = Todo.objects.create()
-

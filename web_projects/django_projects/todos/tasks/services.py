@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from django.conf import settings
 from tasks.models import Todo as ModelTodo
 
+
 @dataclass
 class Todo:
     id: int
@@ -12,7 +13,6 @@ class Todo:
 
 
 class Todos:
-
     def __init__(self, file_name=settings.BASE_DIR / "data/todos.json"):
         # def __init__(self, file_name):
         self.file_name = file_name
@@ -25,7 +25,14 @@ class Todos:
                 self.todos = [Todo(**t) for t in todos]
             print("Załadowano dane")
         except FileNotFoundError:
-            self.todos = [Todo(id=1, title="Nauka Pythona", description="Codziennie pół godziny", done=False)]
+            self.todos = [
+                Todo(
+                    id=1,
+                    title="Nauka Pythona",
+                    description="Codziennie pół godziny",
+                    done=False,
+                )
+            ]
 
     def save_data(self):
         with open(self.file_name, "w") as f:
@@ -48,10 +55,11 @@ class Todos:
     def update(self, id: int, data: dict):
         todo = self.get(id)
         for k, v in data.items():
-            if k == "id": continue
+            if k == "id":
+                continue
             setattr(todo, k, v)
 
-        if 'done' not in data:
+        if "done" not in data:
             todo.done = False
 
         self.save_data()
@@ -67,7 +75,6 @@ class Todos:
 
 
 class ModelTodosService:
-
     def __enter__(self):
         return self
 
@@ -81,23 +88,26 @@ class ModelTodosService:
         return ModelTodo.objects.get(id=id)
 
     def update(self, id, data):
-        if 'csrfmiddlewaretoken' in data: data.pop('csrfmiddlewaretoken')
+        if "csrfmiddlewaretoken" in data:
+            data.pop("csrfmiddlewaretoken")
         t = self.get(id)
         for k, v in data.items():
-            if k == "done": v = bool(v)
+            if k == "done":
+                v = bool(v)
             setattr(t, k, v)
-        if 'done' not in data:
+        if "done" not in data:
             t.done = False
         t.save()
         return t
 
     def create(self, data):
-        if 'csrfmiddlewaretoken' in data: data.pop('csrfmiddlewaretoken')
+        if "csrfmiddlewaretoken" in data:
+            data.pop("csrfmiddlewaretoken")
         t = ModelTodo.objects.create(**data)
         return t
 
-class TaskLoadData:
 
+class TaskLoadData:
     def __init__(self, klass):
         # def __init__(self, file_name):
         self.data = Todos().all()

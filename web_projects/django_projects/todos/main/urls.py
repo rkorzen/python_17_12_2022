@@ -5,5 +5,5 @@ urlpatterns = [
     path("", hello),
     path("hello/", hello),
     path("hello/<name>/", hello),
-    path("contact/", contact)
+    path("contact/", contact),
 ]

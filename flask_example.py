@@ -1,15 +1,15 @@
 import logging
 
 from flask import Flask, request, render_template
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
 
-dane = [
-    {},{}
-]
+dane = [{}, {}]
+
 
 @app.route("/")
 def home():
@@ -43,7 +43,7 @@ def template_view():
         "content.html",
         data=["ala", "kot"],
         oceny=[["a", "b", "c"], 2, 3, 4, 5],
-        dane={"psy": 100, "słonie": 1}
+        dane={"psy": 100, "słonie": 1},
     )
 
 
@@ -53,17 +53,14 @@ def template_view2():
         "content.html",
         data=[1, 2, 3, 4, 5],
         oceny=[0, 0, 0, 0, 0, 0],
-        dane=[0, 0, 0, 0, 0]
+        dane=[0, 0, 0, 0, 0],
     )
 
 
 @app.route("/about/")
 def about():
     text = "jakis dlugoi opis ..."
-    return render_template(
-        "about.html",
-        text=text
-    )
+    return render_template("about.html", text=text)
 
 
 @app.route("/bizcard/")
@@ -72,13 +69,10 @@ def bizcard():
         "name": "Rafał",
         "last_name": "Korzeniewski",
         "age": 42,
-        "bio": "Fizyk muzyk puzonista"
+        "bio": "Fizyk muzyk puzonista",
     }
 
-    return render_template(
-        "card.html",
-        person=person
-    )
+    return render_template("card.html", person=person)
 
 
 @app.route("/formularz/", methods=["GET", "POST"])

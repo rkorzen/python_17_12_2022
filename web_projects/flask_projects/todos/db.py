@@ -9,8 +9,8 @@ class Todo:
     description: str
     done: bool
 
-class Todos:
 
+class Todos:
     def __init__(self, file_name="todos.json"):
         self.file_name = file_name
         self.load_data()
@@ -18,12 +18,18 @@ class Todos:
     def load_data(self):
         try:
             with open(self.file_name) as f:
-                todos = json.load(f) 
+                todos = json.load(f)
                 self.todos = [Todo(**t) for t in todos]
 
         except FileNotFoundError:
-            self.todos = [Todo(id=1, title="Nauka Pythona", description="Codziennie pół godziny", done=False)]
-    
+            self.todos = [
+                Todo(
+                    id=1,
+                    title="Nauka Pythona",
+                    description="Codziennie pół godziny",
+                    done=False,
+                )
+            ]
 
     def save_data(self):
         with open(self.file_name, "w") as f:
@@ -34,9 +40,9 @@ class Todos:
         return self.todos
 
     def get(self, id):
-        return self.todos[id-1]
+        return self.todos[id - 1]
 
-    def create(self, data: dict ):
+    def create(self, data: dict):
         id = len(self.todos) + 1
         data["id"] = id
         todo = Todo(**data)
@@ -51,6 +57,7 @@ class Todos:
     def __exit__(self, exc_type, exc_value, exc_tb):
         self.save_data()
         print("Dane zapisane")
+
 
 with Todos() as todos:
     print(todos.all())

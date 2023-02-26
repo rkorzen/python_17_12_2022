@@ -3,11 +3,11 @@ from faker import Faker
 
 faker = Faker("pl_PL")
 
+
 def generate_authors(n=10):
     for _ in range(n):
         Author.objects.create(
-            first_name=faker.first_name(),
-            last_name=faker.last_name()
+            first_name=faker.first_name(), last_name=faker.last_name()
         )
 
 
@@ -20,5 +20,5 @@ def generate_books(n=100):
             title=faker.text(100),
             description=faker.text(500),
             year=int(faker.year()),
-            author=author
+            author=author,
         )

@@ -1,12 +1,11 @@
 from abc import ABC, abstractmethod
 
 
-class Food():
+class Food:
     calories: int = 100
 
 
 class Animal(ABC):
-
     @abstractmethod
     def eat(self, food: Food) -> None:
         pass
@@ -42,10 +41,15 @@ class Dog(Animal):
 class Doberman(Dog):
     energy = 120
 
+
 def xxx(x: int):
     pass
 
-def yyy(): pass
+
+def yyy():
+    pass
+
+
 # print(xxx + yyy)
 
 print(xxx.__annotations__)

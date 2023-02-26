@@ -9,16 +9,13 @@ from main.forms import ContactForm
 
 def hello(request, name="World"):
     # return HttpResponse(f"Hello {name}!")
-    return render(
-        request=request,
-        template_name="home.html",
-        context={"name": name}
-    )
+    return render(request=request, template_name="home.html", context={"name": name})
 
 
 def send_email(name, email, content):
     print(f"Wiadomośc od {name} ({email})")
     print(content)
+
 
 def contact(request):
 
@@ -31,10 +28,4 @@ def contact(request):
 
     form = ContactForm()
 
-
-
-    return render(
-        request,
-        "contact.html",
-        {"form": form}
-    )
+    return render(request, "contact.html", {"form": form})
