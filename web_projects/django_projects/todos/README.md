@@ -240,3 +240,13 @@ wygeneruj 100 postów
 
 1. wygeneruj 10 losowych autorów
 2. Generowanie 100 ksiażek (z losowym autorem) + dodanie paginacji w widoku listy ksiazek
+
+## Zadanie
+
+Dodaj header - pasek nawigacji na górze strony
+
+link do listy postów
+link do listy ksiażek
+
+link do strony zalogowania
+link do strony wylogowania

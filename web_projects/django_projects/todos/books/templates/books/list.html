@@ -4,10 +4,13 @@
 
   <h1>Lista książek</h1>
   <ul>
-  {% for book in books %}
-    <li><a href="/books/{{ book.id }}">{{ book }}</a></li>
+  {% for book in page_obj %}
+<!--    <li><a href="/books/{{ book.id }}">{{ book }}</a></li>-->
+    <li><a href="{% url 'books:details' book.id %}">{{ book }}</a></li>
   {% endfor %}
   </ul>
+
+  {% include "common/includes/paginator.html" %}
 
   <div>
     {% crispy form %}

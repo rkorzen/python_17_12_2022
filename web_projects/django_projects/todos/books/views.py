@@ -1,13 +1,17 @@
+from django.conf import settings
+from django.core.paginator import Paginator
 from django.shortcuts import render
 
 from books.forms import BookForm
 from books.models import Book
-from django.conf import settings
+from common.views import paginate
+
 
 # Create your views here.
 
 def book_list(request):
-    books = Book.objects.all()
+
+    page_obj = paginate(request, Book)
 
     if request.method == "POST":
         form = BookForm(data=request.POST, files=request.FILES)
@@ -20,7 +24,7 @@ def book_list(request):
     return render(
         request,
         "books/list.html",
-        {"books": books, "form": form}
+        {"page_obj": page_obj, "form": form}
     )
 
 
@@ -44,17 +48,16 @@ def book_details(request, id):
     )
 
 
-
 def handle_uploaded_file(f, path):
     with open(path, "wb+") as destination:
         for chunk in f.chunks():
             destination.write(chunk)
-def upload_file(request):
 
+
+def upload_file(request):
     if request.method == "POST":
         name = settings.MEDIA_ROOT + "/books/images/xxx.jpg"
         f = request.FILES["upload_file"]
         handle_uploaded_file(f, name)
-
 
     return render(request, "books/cover_upload.html", {})

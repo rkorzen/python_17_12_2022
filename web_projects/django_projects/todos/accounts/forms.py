@@ -17,3 +17,8 @@ class UserProfileForm(forms.ModelForm):
             "description",
             "picture",
         ]
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.PasswordInput()
