@@ -232,3 +232,6 @@ wyświetl okłądkę w widoku szczegółów książki
 
 Dodaj w UserProfile zdjecie. Uzyj formularza opartego o model by w nowym widoku i szablonie uzyc formularza do edycji profilu
 
+## Zadanie
+
+wygeneruj 100 postów

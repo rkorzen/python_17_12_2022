@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 <h1>{{post.title}}</h1>
 <small>Created: {{post.created}}</small>
@@ -10,6 +10,9 @@
 </div>
 <div>
 
+</div>
+<div>
+  {% crispy form %}
 </div>
 
 {% endblock %}

@@ -1,4 +1,6 @@
 from django.contrib import admin
+
+from common.admin import TagAdminHorizontal
 from .models import Book, Author, AuthorProfile
 from import_export import resources
 from import_export.admin import ExportMixin
@@ -12,7 +14,7 @@ class BookResource(resources.ModelResource):
 #     model = Author
 
 @admin.register(Book)
-class BookAdmin(ExportMixin, admin.ModelAdmin):
+class BookAdmin(ExportMixin, TagAdminHorizontal):
     list_display = ["title", "author"]
     search_fields = ["title", "author", "description"]
     resource_class = BookResource
