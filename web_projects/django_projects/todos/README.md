@@ -250,3 +250,7 @@ link do listy ksiażek
 
 link do strony zalogowania
 link do strony wylogowania
+
+## Zadanie
+
+Powtórzenie dla postów - dodanie nazw dla ścieżek w urls i dodanie namespace
