@@ -235,3 +235,8 @@ Dodaj w UserProfile zdjecie. Uzyj formularza opartego o model by w nowym widoku 
 ## Zadanie
 
 wygeneruj 100 postów
+
+## Zadanie
+
+1. wygeneruj 10 losowych autorów
+2. Generowanie 100 ksiażek (z losowym autorem) + dodanie paginacji w widoku listy ksiazek

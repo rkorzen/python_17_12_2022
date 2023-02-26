@@ -5,3 +5,4 @@ crispy-bootstrap5
 # -r core.txt
 django-import-export
 pillow
+faker
