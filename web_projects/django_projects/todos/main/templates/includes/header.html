@@ -19,7 +19,7 @@
         <a href="{% url 'logout' %}"><button type="button" class="btn btn-outline-primary me-2">Logout ({{user}})</button></a>
         {% else %}
         <a href="{% url 'login' %}"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
-        <button type="button" class="btn btn-primary">Sign-up</button>
+        <a href="{% url 'register' %}"><button type="button" class="btn btn-primary">Sign-up</button></a>
         {% endif %}
         
        

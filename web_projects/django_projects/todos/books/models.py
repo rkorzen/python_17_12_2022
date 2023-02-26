@@ -1,6 +1,6 @@
 from django.db import models
 from common.models import Timestamped
-
+from sorl.thumbnail import ImageField
 
 # Create your models here.
 
@@ -27,7 +27,7 @@ class Book(Timestamped):
         Author, on_delete=models.CASCADE, null=True, related_name="books"
     )
     year = models.SmallIntegerField()
-    cover = models.ImageField(upload_to="books/covers/%Y/%m/", blank=True, null=True)
+    cover = ImageField(upload_to="books/covers/%Y/%m/", blank=True, null=True)
     tags = models.ManyToManyField("tags.Tag", related_name="books", blank=True)
 
     def __str__(self):

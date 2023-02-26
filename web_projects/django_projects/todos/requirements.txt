@@ -6,3 +6,5 @@ crispy-bootstrap5
 django-import-export
 pillow
 faker
+sorl-thumbnail
+python-memcached

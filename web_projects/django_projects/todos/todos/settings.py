@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "import_export",
+    "sorl.thumbnail",
     "calculus",
     "main",
     "tasks",
@@ -148,3 +149,6 @@ SHELL_PLUS_PRINT_SQL = True
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
