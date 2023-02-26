@@ -11,8 +11,10 @@
 <div>
 
 </div>
+
+{% if user == post.author %}
 <div>
   {% crispy form %}
 </div>
-
+{% endif %}
 {% endblock %}

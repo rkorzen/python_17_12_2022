@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.core.paginator import Paginator
+from django.contrib import messages
 from django.shortcuts import render
 
 from books.forms import BookForm
@@ -17,7 +17,8 @@ def book_list(request):
         form = BookForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             # Book.objects.create(**form.cleaned_data)
-            form.save()
+            book = form.save()
+            messages.success(request, f"Książka {book.title} została utworzona")
 
     form = BookForm()
 

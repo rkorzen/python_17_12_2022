@@ -6,13 +6,11 @@
   <h1>Lista postów</h1>
   <ul>
   {% for post in page_obj %}
-    <li><a href="/posts/{{ post.id }}">{{ post.title }}</a></li>
+    <li><a href="{% url 'posts:details' post.id %}">{{ post.title }}</a></li>
   {% endfor %}
   </ul>
 
 {% include "common/includes/paginator.html" %}
-
-
 
 
 {% endblock %}
