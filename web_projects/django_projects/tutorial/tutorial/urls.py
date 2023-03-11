@@ -21,6 +21,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("snippets.urls")),
     path("", include("cars.urls")),
+    path("api-auth/", include("rest_framework.urls")),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns, allowed=["json", "html", "xml"])
