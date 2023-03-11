@@ -3,6 +3,6 @@ from snippets import views
 
 
 urlpatterns = [
-    path("snippets/", views.snippet_list),
-    path("snippets/<int:id>", views.snippet_details),
+    path("snippets/", views.SnippetList.as_view()),
+    path("snippets/<int:id>", views.SnippetDetial.as_view()),
 ]
