@@ -21,3 +21,6 @@ class Snippet(models.Model):
 
     class Meta:
         ordering = ["created"]
+
+
+# Snippet.objects.create(code="x=1")
