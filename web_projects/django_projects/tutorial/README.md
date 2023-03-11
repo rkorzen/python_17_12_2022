@@ -8,3 +8,5 @@
 4. Dodac z poziomu shell ze dwa obiekty
 
 ## przejśc na widoki klasowe oparte o mixins
+
+## przejśc na generyki
