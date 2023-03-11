@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # aplikacje django - zewnętrzne - zainstalowane
     "rest_framework",
+    "django_extensions",
     # aplikacje nasze
     "snippets",
 ]
