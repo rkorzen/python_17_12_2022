@@ -12,3 +12,5 @@
 ## przejśc na generyki
 
 ## Przejśc na ViewSet w cars
+
+## Wprowadzi routery w cars

@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework.urlpatterns import format_suffix_patterns
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    # path("", include("cars.urls")),
     path("", include("snippets.urls")),
-    path("", include("cars.urls")),
+    # path("", include(router.urls)),
     path("api-auth/", include("rest_framework.urls")),
 ]

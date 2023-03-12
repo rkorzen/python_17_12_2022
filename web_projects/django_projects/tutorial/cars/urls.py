@@ -1,19 +1,9 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+
 from cars import views
+# from snippets.urls import router
+car_router = DefaultRouter()
+car_router.register(r"cars", views.CarViewSet, basename="car")
 
-
-car_list = views.CarViewSet.as_view({"get": "list", "post": "create"})
-
-car_details = views.CarViewSet.as_view(
-    {
-        "get": "retrieve",
-        "put": "update",
-        "patch": "partial_update",
-        "delete": "destroy",
-    }
-)
-
-urlpatterns = [
-    path("cars/", car_list, name="car-list"),
-    path("cars/<int:pk>", car_details, name="car-detail"),
-]
+# urlpatterns = [path("", include(router.urls))]
