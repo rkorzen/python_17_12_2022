@@ -23,5 +23,3 @@ urlpatterns = [
     path("", include("cars.urls")),
     path("api-auth/", include("rest_framework.urls")),
 ]
-
-urlpatterns = format_suffix_patterns(urlpatterns, allowed=["json", "html", "xml"])

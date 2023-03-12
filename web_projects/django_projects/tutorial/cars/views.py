@@ -1,14 +1,9 @@
-from rest_framework import generics
+from rest_framework import viewsets
 
 from cars.models import Car
 from cars.serializers import CarSerializer
 
 
-class CarList(generics.ListCreateAPIView):
-    queryset = Car.objects.all()
-    serializer_class = CarSerializer
-
-
-class CarDetail(generics.RetrieveUpdateDestroyAPIView):
+class CarViewSet(viewsets.ModelViewSet):
     queryset = Car.objects.all()
     serializer_class = CarSerializer
