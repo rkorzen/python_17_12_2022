@@ -10,3 +10,5 @@
 ## przejśc na widoki klasowe oparte o mixins
 
 ## przejśc na generyki
+
+## Przejśc na ViewSet w cars
